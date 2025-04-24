@@ -1,0 +1,96 @@
+/* Contenedor principal para imágenes de proyectos */
+.project-image-container {
+    flex-shrink: 0;
+    width: 50%;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Contenedor para efecto hover */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Estilo para la imagen */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Overlay con efecto de transparencia */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 48, 243, 0.5); /* Color primario de tu sitio con transparencia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Icono de ojo */
+.image-overlay i {
+    color: white;
+    font-size: 2.5rem;
+}
+
+/* Efectos al pasar el cursor */
+.image-container:hover .image-overlay {
+    opacity: 1;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos para el lightbox */
+.sl-overlay {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+}
+
+.sl-wrapper .sl-close, 
+.sl-wrapper .sl-navigation button {
+    color: var(--bs-primary) !important;
+}
+
+.sl-wrapper .sl-counter {
+    color: white !important;
+}
+
+/* Borde para imágenes claras */
+.image-with-border {
+    border: 2px solid #000;
+}
+
+/* Aseguramos que el borde no afecte al layout */
+.image-with-border img {
+    display: block;
+}
+
+
+
+/* Asegura compatibilidad con dispositivos móviles */
+@media (max-width: 767.98px) {
+    .d-flex.align-items-center {
+        flex-direction: column;
+    }
+    
+    .project-image-container {
+        width: 100%;
+        height: 250px; /* Altura fija en móviles */
+    }
+    
+    .image-container {
+        height: 100%;
+    }
+}
